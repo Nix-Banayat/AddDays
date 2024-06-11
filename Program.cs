@@ -10,11 +10,8 @@ namespace AddDays
             int dayNumber = Convert.ToInt16(Console.ReadLine());
 
             Console.WriteLine (Days(dayNumber));
-
-            Console.Write("Input number to add to the day: ");
-            int dayToAdd = Convert.ToInt16(Console.ReadLine());
-
-            int finalDay = (dayNumber + dayToAdd) - 7;
+            
+            int finalDay = AddDays(dayNumber);
 
             switch (finalDay)
             {
@@ -52,6 +49,16 @@ namespace AddDays
             string message = dayNumber >= 1 && dayNumber <= 7? $"The day is {days[dayNumber-1]}." : "Invalid Input!";
 
             return message;
+        }
+
+        public static int AddDays(int dayNumber)
+        {
+            Console.Write("Input number to add to the day: ");
+            int dayToAdd = Convert.ToInt16(Console.ReadLine());
+
+            int finalDay = (dayNumber + dayToAdd) % 7;
+           
+            return finalDay;
         }
     }
 }
