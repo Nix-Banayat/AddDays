@@ -13,33 +13,8 @@ namespace AddDays
             
             int finalDay = AddDays(dayNumber);
 
-            switch (finalDay)
-            {
-                case 1:
-                    Console.WriteLine("The day is MONDAY");
-                    break;
-                case 2:
-                    Console.WriteLine("The day is TUESDAY");
-                    break;
-                case 3:
-                    Console.WriteLine("The day is WEDNESDAY");
-                    break;
-                case 4:
-                    Console.WriteLine("The day is THURSDAY");
-                    break;
-                case 5:
-                    Console.WriteLine("The day is FRIDAY");
-                    break;
-                case 6:
-                    Console.WriteLine("The day is SATURDAY");
-                    break;
-                case 7:
-                    Console.WriteLine("The day is SUNDAY");
-                    break;
-                default:
-                    Console.WriteLine("Invalid Input.");
-                    break;
-            }
+            Console.WriteLine (FinalDay(finalDay));
+
         }
 
         public static string Days(int dayNumber)
@@ -59,6 +34,15 @@ namespace AddDays
             int finalDay = (dayNumber + dayToAdd) % 7;
            
             return finalDay;
+        }
+
+        public static string FinalDay(int finalDay)
+        {
+
+            string[] addedDay = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+            string message = finalDay > 1 ? "The day is {addedDay[finalDay-1]}." : "Invalid Input";
+
+            return message;
         }
     }
 }
