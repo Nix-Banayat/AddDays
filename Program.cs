@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Security.Cryptography;
 
 namespace AddDays
 {
@@ -13,19 +14,15 @@ namespace AddDays
             
             int finalDay = AddDays(dayNumber);
 
-            Console.WriteLine (FinalDay(finalDay));
-
+            Console.WriteLine(FinalDay(finalDay));
         }
-
         public static string Days(int dayNumber)
         {
-
             string[] days = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
             string message = dayNumber >= 1 && dayNumber <= 7? $"The day is {days[dayNumber-1]}." : "Invalid Input!";
 
             return message;
         }
-
         public static int AddDays(int dayNumber)
         {
             Console.Write("Input number to add to the day: ");
@@ -35,10 +32,8 @@ namespace AddDays
            
             return finalDay;
         }
-
         public static string FinalDay(int finalDay)
         {
-
             string[] addedDay = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
             string message = finalDay > 1 ? "The day is {addedDay[finalDay-1]}." : "Invalid Input";
 
